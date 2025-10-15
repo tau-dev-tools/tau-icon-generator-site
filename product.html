@@ -221,12 +221,11 @@
               <p style="color:var(--muted-foreground); margin-top:0.75rem; font-size:0.95rem;">Download links are also sent to your email.</p>
             </div>
             <script>
-              // Check for Stripe success query param
-              function getQueryParam(name) {
-                const url = new URL(window.location.href);
-                return url.searchParams.get(name);
+              // Check for tau_purchase cookie
+              function hasPurchaseCookie() {
+                return document.cookie.split(';').some((item) => item.trim().startsWith('tau_purchase=success'));
               }
-              if (getQueryParam('success') === 'true') {
+              if (hasPurchaseCookie()) {
                 document.getElementById('stripe-payment-container').style.display = 'none';
                 document.getElementById('stripe-success-message').style.display = 'block';
               } else {
