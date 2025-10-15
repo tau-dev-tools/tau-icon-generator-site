@@ -2,10 +2,10 @@
 
 /* CSS Variables (Design Tokens) */
 :root {
-  --background: oklch(0.96 0.01 220);
-  --foreground: oklch(0.12 0 0);
-  --card: oklch(0.98 0.01 220);
-  --card-foreground: oklch(0.12 0 0);
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.16 0 0);
+  --card-foreground: oklch(0.98 0 0);
   --primary: oklch(0.75 0.15 195);
   --primary-foreground: oklch(0.12 0 0);
   --secondary: oklch(0.22 0 0);
@@ -135,10 +135,8 @@ body {
   color: var(--primary-foreground);
 }
 
-
 .btn-primary:hover {
-  background-color: oklch(0.75 0.15 195 / 0.85); /* Slightly lighter primary */
-  opacity: 1;
+  opacity: 0.9;
 }
 
 .btn-outline {
@@ -148,7 +146,7 @@ body {
 }
 
 .btn-outline:hover {
-  background-color: oklch(0.22 0 0 / 0.1); /* Slightly lighter muted */
+  background-color: var(--muted);
 }
 
 .btn-lg {
