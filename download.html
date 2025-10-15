@@ -32,23 +32,13 @@
           <p style="font-size: 1.15rem; color: var(--muted-foreground); margin-bottom: 2rem;">
             Thank you for your purchase! Click the button below to download the app.
           </p>
-            // Set a cookie to indicate successful purchase
-            document.cookie = "tau_purchase=success; path=/; max-age=31536000"; // 1 year
-          
-            // Optionally, read Stripe session_id from URL and display it if present
-            function getQueryParam(name) {
-              const url = new URL(window.location.href);
-              return url.searchParams.get(name);
-            }
-            const sessionId = getQueryParam('session_id');
-            if (sessionId) {
-              const info = document.createElement('p');
-              info.style.color = 'var(--muted-foreground)';
-              info.style.marginTop = '1.5rem';
-              info.style.fontSize = '0.95rem';
-              info.textContent = `Your Stripe session ID: ${sessionId}`;
-              document.querySelector('.max-w-2xl.mx-auto.text-center').appendChild(info);
-            }
+            <script>
+              // Set a cookie to indicate successful purchase
+              document.cookie = "tau_purchase=success; path=/; max-age=31536000"; // 1 year
+
+              // Set a cookie to indicate successful purchase
+              document.cookie = "tau_purchase=success; path=/; max-age=31536000"; // 1 year
+            </script>
           <a href="#download" class="btn btn-primary w-full" style="font-size:1.25rem; padding:1rem 2rem;">
             Download TAU Icon Generator
           </a>
