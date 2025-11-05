@@ -99,9 +99,9 @@ export default function ProductPage() {
                     <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span>GPT-4o prompt refinement for better results</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Automatic background removal (Windows & macOS)</span>
+                  <div className="flex items-center gap-3">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>Automatic background removal</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -115,9 +115,9 @@ export default function ProductPage() {
                   <CardTitle>Additional Benefits</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Cross-platform support (Windows & macOS)</span>
+                  <div className="flex items-center gap-3">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>Native macOS application</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -218,7 +218,7 @@ export default function ProductPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span>Windows & macOS versions included</span>
+                    <span>macOS application included</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Check className="h-5 w-5 text-primary flex-shrink-0" />

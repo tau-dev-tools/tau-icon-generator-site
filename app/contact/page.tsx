@@ -70,8 +70,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">What platforms are supported?</h4>
-                  <p className="text-sm text-muted-foreground">
-                    TAU Icon Generator works on Windows and macOS. Background removal is available on both platforms.
+                                    <p className="text-muted-foreground mb-4">
+                    TAU Icon Generator is designed specifically for macOS with integrated background removal capabilities.
                   </p>
                 </div>
                 <div>
