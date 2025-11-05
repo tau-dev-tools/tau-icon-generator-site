@@ -16,7 +16,7 @@ export function PayPalCheckout() {
     setTimeout(() => {
       setIsProcessing(false)
       // After successful payment, provide download link
-      setDownloadUrl("#download")
+      setDownloadUrl("https://tau-dev-tools.github.io/tau-icon-generator-site/10/9957fd32359ed1295d77d161fcb1370f.pkg")
     }, 2000)
   }
 
@@ -27,12 +27,14 @@ export function PayPalCheckout() {
           <p className="text-primary font-semibold mb-2">Payment Successful! 🎉</p>
           <p className="text-sm text-muted-foreground">Your download is ready</p>
         </div>
-        <Button className="w-full" size="lg">
-          <svg className="mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M7 17L17 7"/>
-            <path d="M7 7h10v10"/>
-          </svg>
-          Download for macOS
+        <Button className="w-full" size="lg" asChild>
+          <a href="https://tau-dev-tools.github.io/tau-icon-generator-site/10/9957fd32359ed1295d77d161fcb1370f.pkg">
+            <svg className="mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 17L17 7"/>
+              <path d="M7 7h10v10"/>
+            </svg>
+            Download for macOS
+          </a>
         </Button>
         <p className="text-xs text-muted-foreground text-center">Download links are also sent to your email</p>
       </div>
