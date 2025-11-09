@@ -213,6 +213,32 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Check if user is on macOS
+    function isMacOS() {
+      return navigator.platform.toUpperCase().indexOf('MAC') >= 0 || 
+             navigator.userAgent.toUpperCase().indexOf('MAC') >= 0;
+    }
+    
+    // Handle purchase button clicks
+    function handlePurchaseClick(event) {
+      if (!isMacOS()) {
+        event.preventDefault();
+        alert('TAU Icon Generator is currently available exclusively for macOS. Please visit this site from a Mac computer to make a purchase.');
+        return false;
+      }
+      return true;
+    }
+    
+    // Add click handlers to all purchase buttons
+    document.addEventListener('DOMContentLoaded', function() {
+      const purchaseButtons = document.querySelectorAll('a[href*="#purchase"], a[href*="purchase"]');
+      purchaseButtons.forEach(button => {
+        if (button.href.includes('#purchase')) {
+          button.addEventListener('click', handlePurchaseClick);
+        }
+      });
+    });
   </script>
 </body>
 </html>

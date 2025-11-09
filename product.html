@@ -248,10 +248,35 @@
               function hasPurchaseCookie() {
                 return document.cookie.split(';').some((item) => item.trim().startsWith('tau_purchase=success'));
               }
+              
+              // Check if user is on macOS
+              function isMacOS() {
+                return navigator.platform.toUpperCase().indexOf('MAC') >= 0 || 
+                       navigator.userAgent.toUpperCase().indexOf('MAC') >= 0;
+              }
+              
               if (hasPurchaseCookie()) {
                 document.getElementById('stripe-payment-container').style.display = 'none';
                 document.getElementById('stripe-success-message').style.display = 'block';
+              } else if (!isMacOS()) {
+                // Show message for non-Mac users
+                document.getElementById('stripe-payment-container').innerHTML = `
+                  <div style="text-align:center; padding:2rem; background-color: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: var(--radius); margin-bottom:1rem;">
+                    <div style="margin-bottom:1rem;">
+                      <img src="public/apple.png" alt="macOS" width="48" height="48" style="opacity: 0.8;">
+                    </div>
+                    <h3 style="font-size:1.25rem; font-weight:600; margin-bottom:1rem; color:var(--foreground);">macOS Required</h3>
+                    <p style="color:var(--muted-foreground); margin-bottom:1rem; line-height:1.5;">
+                      TAU Icon Generator is currently available exclusively for macOS.<br>
+                      To purchase and download the app, please visit this site from a Mac computer.
+                    </p>
+                    <p style="font-size:0.875rem; color:var(--muted-foreground);">
+                      <a href="contact.html" style="color: var(--primary);">Contact us</a> to be notified about future platform releases.
+                    </p>
+                  </div>
+                `;
               } else {
+                // Show normal payment button for Mac users
                 document.getElementById('stripe-payment-container').innerHTML = `
                   <a href=\"https://buy.stripe.com/9B6fZh1w220SgPc1V23cc03\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-primary w-full\" style=\"font-size:1.25rem; padding:1rem 2rem;\">
                     Pay with Stripe
