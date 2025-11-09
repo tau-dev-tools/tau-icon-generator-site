@@ -254,14 +254,19 @@
                 const platform = navigator.platform.toUpperCase();
                 const userAgent = navigator.userAgent.toUpperCase();
                 
+                // More comprehensive iOS detection (including iPad in desktop mode)
+                const isIOS = /IPHONE|IPAD|IPOD/.test(userAgent) || 
+                             /IPHONE|IPAD|IPOD/.test(platform) ||
+                             // iPad in desktop mode detection
+                             (navigator.maxTouchPoints && navigator.maxTouchPoints > 1 && /MAC/.test(platform)) ||
+                             // Additional iPad detection
+                             /MOBILE.*SAFARI/.test(userAgent) && /MAC/.test(platform);
+                
                 // Check for macOS/Mac desktop platforms
                 const isMac = platform.indexOf('MAC') >= 0 || userAgent.indexOf('MAC OS X') >= 0;
                 
-                // Exclude iOS devices (iPhone, iPad, iPod)
-                const isIOS = /IPHONE|IPAD|IPOD/.test(userAgent) || 
-                             /IPHONE|IPAD|IPOD/.test(platform);
-                
-                return isMac && !isIOS;
+                // Only return true for actual desktop Macs (not iOS devices)
+                return isMac && !isIOS && !navigator.maxTouchPoints;
               }
               
               if (hasPurchaseCookie()) {
