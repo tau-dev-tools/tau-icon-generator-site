@@ -249,10 +249,19 @@
                 return document.cookie.split(';').some((item) => item.trim().startsWith('tau_purchase=success'));
               }
               
-              // Check if user is on macOS
+              // Check if user is on macOS (desktop Mac, not iOS devices)
               function isMacOS() {
-                return navigator.platform.toUpperCase().indexOf('MAC') >= 0 || 
-                       navigator.userAgent.toUpperCase().indexOf('MAC') >= 0;
+                const platform = navigator.platform.toUpperCase();
+                const userAgent = navigator.userAgent.toUpperCase();
+                
+                // Check for macOS/Mac desktop platforms
+                const isMac = platform.indexOf('MAC') >= 0 || userAgent.indexOf('MAC OS X') >= 0;
+                
+                // Exclude iOS devices (iPhone, iPad, iPod)
+                const isIOS = /IPHONE|IPAD|IPOD/.test(userAgent) || 
+                             /IPHONE|IPAD|IPOD/.test(platform);
+                
+                return isMac && !isIOS;
               }
               
               if (hasPurchaseCookie()) {
