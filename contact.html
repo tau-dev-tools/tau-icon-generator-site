@@ -23,7 +23,7 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
       
-      <a href="product.html#purchase" class="btn btn-primary btn-sm">Get Started</a>
+      <div id="nav-cta-container"></div>
     </div>
   </nav>
 
@@ -202,6 +202,13 @@
           button.addEventListener('click', handlePurchaseClick);
         }
       });
+      
+      // Handle navigation CTA based on macOS detection
+      if (!isMacOS()) {
+        document.getElementById('nav-cta-container').innerHTML = `<a href="product.html#purchase" class="btn btn-primary btn-sm">Get Started</a>`;
+      } else {
+        document.getElementById('nav-cta-container').innerHTML = `<a href="https://tauicongenerator.com/10/demo.pkg" class="btn btn-primary btn-sm" style="background-color: #22c55e; border-color: #22c55e;">Try Demo</a>`;
+      }
     });
   </script>
 </body>

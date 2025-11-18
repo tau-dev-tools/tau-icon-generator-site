@@ -22,7 +22,7 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
       
-      <a href="product.html#purchase" class="btn btn-primary btn-sm">Get Started</a>
+      <div id="nav-cta-container"></div>
     </div>
   </nav>
 
@@ -34,6 +34,20 @@
           <p style="font-size: 1.25rem; color: var(--muted-foreground); margin-bottom: 3rem;">
             Follow these simple steps to get your OpenAI API key and start generating icons
           </p>
+
+          <div class="card" style="text-align: center; border-color: rgba(34, 197, 94, 0.2); background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(34, 197, 94, 0.02) 100%); margin-bottom: 2rem;">
+            <div class="flex items-center justify-center mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #22c55e; opacity: 0.8;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Try the Demo First!</h3>
+            <p style="color: var(--muted-foreground); margin-bottom: 1rem; line-height: 1.5;">
+              New to TAU Icon Generator? Download the <strong style="color: var(--foreground);">free 5-day demo</strong> to explore all features before setting up your OpenAI API.
+            </p>
+            <div id="guide-demo-container" style="margin-bottom: 1rem;"></div>
+            <p style="font-size: 0.875rem; color: var(--muted-foreground);">
+              The demo works exactly like the full version - perfect for testing before you invest in API credits.
+            </p>
+          </div>
 
           <div class="alert mb-12">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
@@ -257,6 +271,28 @@
           button.addEventListener('click', handlePurchaseClick);
         }
       });
+      
+      // Handle navigation CTA based on macOS detection
+      if (!isMacOS()) {
+        document.getElementById('nav-cta-container').innerHTML = `<a href=\"product.html#purchase\" class=\"btn btn-primary btn-sm\">Get Started</a>`;
+        // Show message for demo section
+        document.getElementById('guide-demo-container').innerHTML = `
+          <div style=\"padding:1rem; background-color: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: var(--radius);\">
+            <p style=\"color:var(--muted-foreground); margin:0; font-size:0.9rem;\">
+              Demo available for macOS only. <a href=\"contact.html\" style=\"color: var(--primary);\">Contact us</a> for updates on other platforms.
+            </p>
+          </div>
+        `;
+      } else {
+        document.getElementById('nav-cta-container').innerHTML = `<a href=\"https://tauicongenerator.com/10/demo.pkg\" class=\"btn btn-primary btn-sm\" style=\"background-color: #22c55e; border-color: #22c55e;\">Try Demo</a>`;
+        // Show demo download button
+        document.getElementById('guide-demo-container').innerHTML = `
+          <a href=\"https://tauicongenerator.com/10/demo.pkg\" class=\"btn btn-primary\" style=\"background-color: #22c55e; border-color: #22c55e;\">
+            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"margin-right: 0.5rem;\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" x2=\"12\" y1=\"15\" y2=\"3\"/></svg>
+            Download Free Demo
+          </a>
+        `;
+      }
     });
   </script>
 </body>

@@ -22,7 +22,7 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
       
-      <a href="product.html#purchase" class="btn btn-primary btn-sm">Get Started</a>
+      <div id="nav-cta-container"></div>
     </div>
   </nav>
 
@@ -40,14 +40,11 @@
         </h1>
 
         <p class="hero-description text-balance">
-          Generate professional custom icons in seconds using DALL-E AI technology. Perfect for apps, games, websites, and any creative project.
+          Generate professional custom icons in seconds using DALL-E AI technology. Perfect for apps, games, websites, and any creative project. <strong style="color: var(--foreground);">Try it free for 5 days!</strong>
         </p>
 
         <div class="hero-buttons">
-          <a href="product.html#purchase" class="btn btn-primary btn-lg">
-            Get Started - $20 One-Time
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
+          <div id="hero-cta-container"></div>
           <a href="product.html" class="btn btn-outline btn-lg">Learn More</a>
         </div>
 
@@ -153,12 +150,9 @@
     <div class="container text-center" style="margin-top:-4rem;">
       <h2 class="section-title mb-4">Ready to Create Amazing Icons?</h2>
       <p style="font-size: 1.125rem; color: var(--muted-foreground); margin-bottom: 2rem; max-width: 42rem; margin-left: auto; margin-right: auto;">
-        Get instant access to TAU Icon Generator for just $20. One-time payment, no subscriptions, lifetime access.
+        Try the free 5-day demo or get instant access to TAU Icon Generator for just $20. One-time payment, no subscriptions, lifetime access.
       </p>
-      <a href="product.html#purchase" class="btn btn-primary btn-lg">
-        Purchase Now - $20
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
+      <div id="final-cta-container" style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;"></div>
     </div>
   </section>
 
@@ -245,6 +239,55 @@
           button.addEventListener('click', handlePurchaseClick);
         }
       });
+      
+      // Handle hero CTA based on macOS detection
+      if (!isMacOS()) {
+        // Show Learn More as primary for non-Mac users
+        document.getElementById('hero-cta-container').innerHTML = `
+          <a href="product.html#purchase" class="btn btn-primary btn-lg">
+            Get Started - $20 One-Time
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        `;
+      } else {
+        // Show demo option for Mac users
+        document.getElementById('hero-cta-container').innerHTML = `
+          <a href="https://tauicongenerator.com/10/demo.pkg" class="btn btn-primary btn-lg" style="background-color: #22c55e; border-color: #22c55e;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            Try Free Demo
+          </a>
+        `;
+      }
+      
+      // Handle final CTA section based on macOS detection
+      if (!isMacOS()) {
+        // Show only purchase button for non-Mac users
+        document.getElementById('final-cta-container').innerHTML = `
+          <a href="product.html#purchase" class="btn btn-primary btn-lg">
+            Purchase Now - $20
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        `;
+      } else {
+        // Show both demo and purchase buttons for Mac users
+        document.getElementById('final-cta-container').innerHTML = `
+          <a href="https://tauicongenerator.com/10/demo.pkg" class="btn btn-primary btn-lg" style="background-color: #22c55e; border-color: #22c55e;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            Try Free Demo
+          </a>
+          <a href="product.html#purchase" class="btn btn-outline btn-lg">
+            Purchase Now - $20
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        `;
+      }
+      
+      // Handle navigation CTA based on macOS detection
+      if (!isMacOS()) {
+        document.getElementById('nav-cta-container').innerHTML = `<a href="product.html#purchase" class="btn btn-primary btn-sm">Get Started</a>`;
+      } else {
+        document.getElementById('nav-cta-container').innerHTML = `<a href="https://tauicongenerator.com/10/demo.pkg" class="btn btn-primary btn-sm" style="background-color: #22c55e; border-color: #22c55e;">Try Demo</a>`;
+      }
     });
   </script>
 </body>
