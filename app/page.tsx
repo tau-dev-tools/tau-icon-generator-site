@@ -50,6 +50,39 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Example Batch */}
+      <section className="py-24 bg-card/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Example Batch: Big Cats</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              A cohesive icon pack generated as a single batch.
+            </p>
+          </div>
+
+          <Card className="bg-card border-border/50">
+            <CardContent className="p-6 md:p-10">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                {[
+                  { src: "/examples/big-cats/leopard.png", alt: "Leopard icon" },
+                  { src: "/examples/big-cats/lion.png", alt: "Lion icon" },
+                  { src: "/examples/big-cats/lynx.png", alt: "Lynx icon" },
+                  { src: "/examples/big-cats/cougar.png", alt: "Cougar icon" },
+                  { src: "/examples/big-cats/tiger.png", alt: "Tiger icon" },
+                ].map((img) => (
+                  <div
+                    key={img.src}
+                    className="aspect-square rounded-lg bg-muted flex items-center justify-center overflow-hidden"
+                  >
+                    <img src={img.src} alt={img.alt} className="w-full h-full object-contain" />
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <section className="py-16 bg-gradient-to-b from-primary/5 to-transparent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
