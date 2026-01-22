@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "TAU Icon Generator - AI-Powered Icon Creation for Unity Developers",
   description:
     "Generate stunning custom icons for your Unity projects using DALL-E AI. Professional icon generation tool with background removal.",
+  icons: {
+    icon: "/appicon.png",
+  },
   generator: "v0.app",
 }
 

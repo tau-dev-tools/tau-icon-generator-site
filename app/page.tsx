@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Sparkles, Wand2, Download, Zap, ImageIcon, Layers, ArrowRight } from "lucide-react"
+import { Wand2, Download, Zap, ImageIcon, Layers, ArrowRight } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -12,7 +12,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8">
-              <Sparkles className="h-4 w-4" />
+              <img src="/appicon.png" alt="" aria-hidden="true" className="h-8 w-8" />
               AI-Powered Icon Generation
             </div>
 
@@ -176,7 +176,7 @@ export default function HomePage() {
             <Card className="bg-card border-border/50 hover:border-primary/50 transition-colors">
               <CardContent className="p-6">
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Sparkles className="h-6 w-6 text-primary" />
+                  <img src="/appicon.png" alt="" aria-hidden="true" className="h-12 w-12" />
                 </div>
               <h3 className="text-xl font-semibold mb-3">Native macOS</h3>
               <p className="text-muted-foreground">Built specifically for macOS to deliver the best possible user experience</p>

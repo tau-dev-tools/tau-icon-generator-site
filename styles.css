@@ -79,9 +79,13 @@ body {
   color: var(--foreground);
 }
 
+.nav-logo svg,
+.nav-logo img {
+  width: 3rem;
+  height: 3rem;
+}
+
 .nav-logo svg {
-  width: 1.5rem;
-  height: 1.5rem;
   color: var(--primary);
 }
 
@@ -195,6 +199,12 @@ body {
   color: var(--primary);
   font-size: 0.875rem;
   font-weight: 500;
+}
+
+.hero-badge img {
+  display: block;
+  width: 2rem;
+  height: 2rem;
 }
 
 .hero-title {
@@ -311,9 +321,18 @@ body {
   margin-bottom: 1rem;
 }
 
-.card-icon svg {
+.card-icon svg,
+.card-icon img {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.card-icon img.logo-mark {
+  width: 3rem;
+  height: 3rem;
+}
+
+.card-icon svg {
   color: var(--primary);
 }
 
@@ -379,6 +398,11 @@ body {
   margin-bottom: 1rem;
   text-decoration: none;
   color: var(--foreground);
+}
+
+.footer-logo img {
+  width: 3rem;
+  height: 3rem;
 }
 
 .footer-description {

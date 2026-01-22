@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Sparkles } from "lucide-react"
 
 export function Navigation() {
   return (
@@ -10,7 +9,7 @@ export function Navigation() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 text-xl font-bold">
-            <Sparkles className="h-6 w-6 text-primary" />
+            <img src="/appicon.png" alt="" aria-hidden="true" className="h-12 w-12" />
             <span className="bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent">
               TAU Icon Generator
             </span>

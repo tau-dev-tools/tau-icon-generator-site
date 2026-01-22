@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Sparkles } from "lucide-react"
 
 export function Footer() {
   return (
@@ -8,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 text-xl font-bold mb-4">
-              <Sparkles className="h-6 w-6 text-primary" />
+              <img src="/appicon.png" alt="" aria-hidden="true" className="h-12 w-12" />
               <span>TAU Icon Generator</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-md">
