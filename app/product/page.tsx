@@ -99,6 +99,18 @@ export default function ProductPage() {
                     <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span>GPT-4o prompt refinement for better results</span>
                   </div>
+                  <div className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Predefined style templates for quick starts</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Icon generation using reference images</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Icon export for iOS, Android, Web, and Unity (from a single icon)</span>
+                  </div>
                   <div className="flex items-center gap-3">
                     <Check className="h-5 w-5 text-primary flex-shrink-0" />
                     <span>Automatic background removal</span>
@@ -146,8 +158,8 @@ export default function ProductPage() {
                       1
                     </span>
                     <div>
-                      <h4 className="font-semibold mb-1">Enter Your Prompt</h4>
-                      <p className="text-muted-foreground">Describe the icon you want to create in simple terms</p>
+                      <h4 className="font-semibold mb-1">Define Your Style</h4>
+                      <p className="text-muted-foreground">Set your icon names and describe the visual style you want</p>
                     </div>
                   </li>
                   <li className="flex gap-4">
@@ -155,10 +167,8 @@ export default function ProductPage() {
                       2
                     </span>
                     <div>
-                      <h4 className="font-semibold mb-1">AI Refinement</h4>
-                      <p className="text-muted-foreground">
-                        GPT-4o automatically enhances your prompt for optimal results
-                      </p>
+                      <h4 className="font-semibold mb-1">Generate Icon</h4>
+                      <p className="text-muted-foreground">AI generates icons in your chosen style</p>
                     </div>
                   </li>
                   <li className="flex gap-4">
@@ -166,8 +176,8 @@ export default function ProductPage() {
                       3
                     </span>
                     <div>
-                      <h4 className="font-semibold mb-1">Generate Icon</h4>
-                      <p className="text-muted-foreground">DALL-E 3 creates your custom icon in high resolution</p>
+                      <h4 className="font-semibold mb-1">Export Platform Sets</h4>
+                      <p className="text-muted-foreground">One-click export for iOS, Android, Web, or Unity with all sizes</p>
                     </div>
                   </li>
                   <li className="flex gap-4">
@@ -175,17 +185,8 @@ export default function ProductPage() {
                       4
                     </span>
                     <div>
-                      <h4 className="font-semibold mb-1">Remove Background (Optional)</h4>
-                      <p className="text-muted-foreground">One-click background removal for transparent icons</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-4">
-                    <span className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 text-primary font-semibold">
-                      5
-                    </span>
-                    <div>
-                      <h4 className="font-semibold mb-1">Save & Use</h4>
-                      <p className="text-muted-foreground">Export your icon and use it in your project immediately</p>
+                      <h4 className="font-semibold mb-1">Import to Project</h4>
+                      <p className="text-muted-foreground">Drag and drop into Xcode, Android Studio, Web, or Unity</p>
                     </div>
                   </li>
                 </ol>

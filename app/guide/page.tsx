@@ -18,7 +18,8 @@ export default function GuidePage() {
             <Alert className="mb-12 border-primary/20 bg-primary/5">
               <AlertDescription className="text-base">
                 TAU Icon Generator uses OpenAI's DALL-E 3 and GPT-4o APIs to create and refine your icons. You'll need
-                to create an OpenAI account and add credits to use the app.
+                to create an OpenAI account and add credits to use the app. It also supports predefined style templates and
+                icon generation using reference images.
               </AlertDescription>
             </Alert>
 

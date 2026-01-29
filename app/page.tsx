@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Wand2, Download, Zap, ImageIcon, Layers, ArrowRight } from "lucide-react"
+import { Wand2, Download, Zap, ImageIcon, Layers, ArrowRight, LayoutTemplate, ImagePlus } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -152,6 +152,30 @@ export default function HomePage() {
             <Card className="bg-card border-border/50 hover:border-primary/50 transition-colors">
               <CardContent className="p-6">
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <LayoutTemplate className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Predefined Style Templates</h3>
+                <p className="text-muted-foreground">
+                  Choose a predefined style template or use custom mode to define your own icon look and pack setup
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border/50 hover:border-primary/50 transition-colors">
+              <CardContent className="p-6">
+                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <ImagePlus className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Icon Generation Using Reference</h3>
+                <p className="text-muted-foreground">
+                  Guide icon generation using a reference image to match an existing style or direction
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border/50 hover:border-primary/50 transition-colors">
+              <CardContent className="p-6">
+                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <ImageIcon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">1024x1024 Resolution</h3>
@@ -166,9 +190,9 @@ export default function HomePage() {
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Download className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Easy Export</h3>
+                <h3 className="text-xl font-semibold mb-2">Icon Export for Platforms</h3>
                 <p className="text-muted-foreground">
-                  Save icons directly to your preferred location with customizable file names
+                  Export size sets from a single icon for iOS, Android, Web (manifest + favicons), and Unity
                 </p>
               </CardContent>
             </Card>
@@ -176,7 +200,9 @@ export default function HomePage() {
             <Card className="bg-card border-border/50 hover:border-primary/50 transition-colors">
               <CardContent className="p-6">
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <img src="/appicon.png" alt="" aria-hidden="true" className="h-12 w-12" />
+                  <span aria-hidden="true" className="text-primary text-2xl leading-none font-semibold">
+                    
+                  </span>
                 </div>
               <h3 className="text-xl font-semibold mb-3">Native macOS</h3>
               <p className="text-muted-foreground">Built specifically for macOS to deliver the best possible user experience</p>
