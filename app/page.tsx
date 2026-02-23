@@ -29,11 +29,11 @@ export default function HomePage() {
               Android, Web, and Unity icon sets automatically.
             </p>
 
-            <p className="text-lg text-muted-foreground mb-12 text-balance max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-4 text-balance max-w-2xl mx-auto">
               What used to take hours of design work can now be done in minutes.
             </p>
 
-            <p className="text-lg text-muted-foreground -mt-8 mb-12 text-balance max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-12 text-balance max-w-2xl mx-auto">
               Create complete icon packs in minutes — instead of hours of manual design.
             </p>
 
@@ -163,17 +163,45 @@ export default function HomePage() {
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Describe your style once. Generate a full set of matching icons automatically.
                 </p>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Same colors. Same geometry. Same visual language.
-                </p>
+                <div className="grid gap-3 text-muted-foreground mb-6">
+                  <div className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary mt-0.5" />
+                    <span>Same colors</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary mt-0.5" />
+                    <span>Same geometry</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary mt-0.5" />
+                    <span>Same visual language</span>
+                  </div>
+                </div>
+
+                <div className="h-px bg-border/50 my-6" aria-hidden="true" />
 
                 <p className="text-sm font-semibold text-foreground mb-3">Perfect for:</p>
-                <div className="grid gap-1 text-muted-foreground">
-                  <div>Sidebars</div>
-                  <div>Menus</div>
-                  <div>Dashboards</div>
-                  <div>Game UI</div>
-                  <div>Full app interfaces</div>
+                <div className="grid gap-3 text-muted-foreground">
+                  <div className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary mt-0.5" />
+                    <span>Sidebars</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary mt-0.5" />
+                    <span>Menus</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary mt-0.5" />
+                    <span>Dashboards</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary mt-0.5" />
+                    <span>Game UI</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary mt-0.5" />
+                    <span>Full app interfaces</span>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -276,13 +304,31 @@ export default function HomePage() {
             <CardContent className="p-8 md:p-10">
               <p className="text-sm font-semibold text-foreground mb-4">Perfect for:</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-muted-foreground">
-                <div>• MVP development</div>
-                <div>• Indie apps and games</div>
-                <div>• App Store launches</div>
-                <div>• Admin dashboards and internal tools</div>
-                <div>• Replacing inconsistent icon sets</div>
+                <div className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-primary mt-0.5" />
+                  <span>MVP development</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-primary mt-0.5" />
+                  <span>Indie apps and games</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-primary mt-0.5" />
+                  <span>App Store launches</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-primary mt-0.5" />
+                  <span>Admin dashboards and internal tools</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-primary mt-0.5" />
+                  <span>Replacing inconsistent icon sets</span>
+                </div>
               </div>
-              <p className="text-muted-foreground mt-6">
+
+              <div className="h-px bg-border/50 my-6" aria-hidden="true" />
+
+              <p className="text-muted-foreground leading-relaxed">
                 If you need consistent icons fast — TAU Icon Generator removes hours of design work.
               </p>
             </CardContent>
