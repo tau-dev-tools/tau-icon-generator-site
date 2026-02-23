@@ -9,9 +9,9 @@ import { Footer } from "@/components/footer"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
-  title: "TAU Icon Generator - AI-Powered Icon Creation for Unity Developers",
+  title: "TAU Icon Generator - Icon Packs & App Icon Sets",
   description:
-    "Generate stunning custom icons for your Unity projects using DALL-E AI. Professional icon generation tool with background removal.",
+    "Generate consistent app-ready icon packs, or export full iOS/Android/Web/Unity AppIcon sets automatically from a single icon. One-time purchase, no subscription.",
   icons: {
     icon: "/appicon.png",
   },

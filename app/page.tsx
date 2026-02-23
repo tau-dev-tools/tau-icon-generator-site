@@ -13,7 +13,7 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8">
               <img src="/appicon.png" alt="" aria-hidden="true" className="h-8 w-8" />
-              Generated automatically
+              Production-ready icons for developers
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
@@ -31,6 +31,10 @@ export default function HomePage() {
 
             <p className="text-lg text-muted-foreground mb-12 text-balance max-w-2xl mx-auto">
               What used to take hours of design work can now be done in minutes.
+            </p>
+
+            <p className="text-lg text-muted-foreground -mt-8 mb-12 text-balance max-w-2xl mx-auto">
+              Create complete icon packs in minutes — instead of hours of manual design.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -53,11 +57,15 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <Check className="h-4 w-4 text-primary mt-0.5" />
+                  <span>macOS application (Apple Silicon & Intel)</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="h-4 w-4 text-primary mt-0.5" />
                   <span>Works with your own OpenAI key</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Check className="h-4 w-4 text-primary mt-0.5" />
-                  <span>Typical AI cost: $10–20 for hundreds of icons</span>
+                  <span>Typical OpenAI usage: $10–20 generates hundreds of icons. You control usage and costs.</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Check className="h-4 w-4 text-primary mt-0.5" />
@@ -170,6 +178,54 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </div>
+
+          <div className="max-w-5xl mx-auto mt-6">
+            <Card className="bg-card border-border/50">
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">Traditional workflow:</h3>
+                    <div className="grid gap-3 text-muted-foreground">
+                      <div className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-primary mt-0.5" />
+                        <span>Search icon libraries</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-primary mt-0.5" />
+                        <span>Adjust colors and sizes</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-primary mt-0.5" />
+                        <span>Fix style inconsistencies</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-primary mt-0.5" />
+                        <span>Export platform sizes</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">With TAU Icon Generator:</h3>
+                    <div className="grid gap-3 text-muted-foreground">
+                      <div className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-primary mt-0.5" />
+                        <span>Describe style once</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-primary mt-0.5" />
+                        <span>Generate full set instantly</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-primary mt-0.5" />
+                        <span>Export and integrate</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -209,13 +265,38 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Where TAU Icon Generator Fits */}
+      <section className="py-24 bg-card/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Where TAU Icon Generator Fits in Your Workflow</h2>
+          </div>
+
+          <Card className="bg-card border-border/50 max-w-4xl mx-auto">
+            <CardContent className="p-8 md:p-10">
+              <p className="text-sm font-semibold text-foreground mb-4">Perfect for:</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-muted-foreground">
+                <div>• MVP development</div>
+                <div>• Indie apps and games</div>
+                <div>• App Store launches</div>
+                <div>• Admin dashboards and internal tools</div>
+                <div>• Replacing inconsistent icon sets</div>
+              </div>
+              <p className="text-muted-foreground mt-6">
+                If you need consistent icons fast — TAU Icon Generator removes hours of design work.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-24 bg-card/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Everything You Need to Go From Idea to Production Icons</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Everything you need to create platform-ready icon packs for your projects
+              Everything you need to create icon packs ready to integrate into your projects
             </p>
           </div>
 
@@ -371,7 +452,7 @@ export default function HomePage() {
                     <div className="text-center mb-6">
                       <h3 className="text-xl font-semibold">{title}</h3>
                       <p className="text-sm text-muted-foreground mt-2">
-                        24 icons • Generated in one style • Exported as PNGs
+                        24–30 icons • Generated from one prompt • One consistent style
                       </p>
                     </div>
 
@@ -476,7 +557,7 @@ export default function HomePage() {
 
               <div className="mt-8 rounded-lg bg-muted p-4 text-center">
                 <p className="text-sm text-muted-foreground">
-                  Typical usage: <span className="font-semibold text-foreground">$10–20</span> generates hundreds of icons.
+                  Typical OpenAI usage: <span className="font-semibold text-foreground">$10–20</span> generates hundreds of icons. You control usage and costs.
                 </p>
               </div>
             </CardContent>
@@ -492,6 +573,42 @@ export default function HomePage() {
           <p className="text-lg text-muted-foreground">
             Create unlimited icon packs — pay only for AI usage.
           </p>
+        </div>
+      </section>
+
+      {/* What You Get */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">What You Get</h2>
+          </div>
+
+          <Card className="bg-card border-border/50 max-w-4xl mx-auto">
+            <CardContent className="p-8 md:p-10">
+              <div className="grid gap-4 text-muted-foreground">
+                <div className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-primary mt-0.5" />
+                  <span>Generate 20–30 matching icons in one style</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-primary mt-0.5" />
+                  <span>Create full iOS / Android AppIcon sets in one click</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-primary mt-0.5" />
+                  <span>Export production-ready PNGs</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-primary mt-0.5" />
+                  <span>One-time purchase — no subscription</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-primary mt-0.5" />
+                  <span>Works with your own OpenAI account</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -513,6 +630,13 @@ export default function HomePage() {
               <Link href="/product#purchase">Buy Once — No Subscription</Link>
             </Button>
           </div>
+
+          <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
+            One-time purchase — <span className="font-semibold text-foreground">$20</span><br />
+            No subscription<br />
+            Free 5-day demo available
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground">Try the full version risk-free with the 5-day demo.</p>
         </div>
       </section>
     </div>

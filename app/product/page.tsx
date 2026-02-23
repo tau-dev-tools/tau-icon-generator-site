@@ -13,7 +13,7 @@ export default function ProductPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">TAU Icon Generator</h1>
             <p className="text-xl text-muted-foreground mb-8 text-balance">
-              Professional AI-powered icon generation tool for developers, designers, and creators
+              Generate consistent app-ready icon packs, or export full AppIcon sets from a single icon
             </p>
           </div>
         </div>
@@ -210,6 +210,23 @@ export default function ProductPage() {
                   </div>
                   <p className="text-muted-foreground mb-2">Lifetime access • No subscriptions • Instant download</p>
                   <p className="text-sm text-primary font-medium">Pay once, own it forever</p>
+
+                  <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
+                    One-time purchase — <span className="font-semibold text-foreground">$20</span>
+                    <br />
+                    No subscription
+                    <br />
+                    <a
+                      href="https://tauicongenerator.com/10/demo.pkg"
+                      className="text-primary hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Free 5-day demo available
+                    </a>
+                  </p>
+
+                  <p className="text-sm text-muted-foreground mt-3">Try the full version risk-free with the 5-day demo.</p>
                 </div>
 
                 <div className="space-y-4 mb-8">
@@ -235,12 +252,22 @@ export default function ProductPage() {
                   </div>
                 </div>
 
+                <div className="mb-6 p-4 bg-muted/50 rounded-lg">
+                  <p className="text-sm font-semibold text-foreground mb-3 text-center">System Requirements</p>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <div>• macOS 12 or later</div>
+                    <div>• Apple Silicon or Intel</div>
+                    <div>• Internet connection for OpenAI API</div>
+                  </div>
+                </div>
+
                 <PayPalCheckout />
 
                 <div className="mt-6 p-4 bg-muted/50 rounded-lg">
                   <p className="text-sm text-muted-foreground text-center">
                     <span className="font-medium text-foreground">Note:</span> You'll need your own OpenAI API key.{" "}
-                    <span className="text-foreground">$10-20/month in credits generates hundreds of icons.</span>{" "}
+                    <span className="text-foreground">Typical OpenAI usage: $10–20 generates hundreds of icons.</span> You
+                    control usage and costs.{" "}
                     <Link href="/guide" className="text-primary hover:underline">
                       See setup guide
                     </Link>

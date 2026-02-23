@@ -11,8 +11,7 @@ export function Footer() {
               <span>TAU Icon Generator</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-md">
-              Professional AI-powered icon generation tool for Unity developers and designers. Create stunning custom
-              icons in seconds with DALL-E technology.
+              Generate consistent app-ready icon packs fast, or export full AppIcon sets for iOS, Android, Web, and Unity.
             </p>
           </div>
 
