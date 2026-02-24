@@ -32,7 +32,7 @@ You can host these files on any web server:
 To add PayPal checkout functionality:
 
 1. Go to [PayPal Developer](https://developer.paypal.com/)
-2. Create a button for $20 payment
+2. Create a button for $29 payment
 3. Replace the `.paypal-placeholder` div in `product.html` with your PayPal button code
 
 ## Customization

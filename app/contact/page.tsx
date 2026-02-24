@@ -64,7 +64,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-2">Do I need a subscription?</h4>
                   <p className="text-sm text-muted-foreground">
-                    No! TAU Icon Generator is a one-time purchase of $20. You'll need your own OpenAI API key, which
+                    No! TAU Icon Generator is a one-time purchase of $29. You'll need your own OpenAI API key, which
                     uses pay-as-you-go pricing (typically $0.04-0.05 per icon).
                   </p>
                 </div>

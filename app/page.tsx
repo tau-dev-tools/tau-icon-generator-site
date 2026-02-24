@@ -678,7 +678,7 @@ export default function HomePage() {
           </div>
 
           <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
-            One-time purchase — <span className="font-semibold text-foreground">$20</span><br />
+            One-time purchase — <span className="font-semibold text-foreground">$29</span><br />
             No subscription<br />
             Free 5-day demo available
           </p>

@@ -32,7 +32,7 @@ export default function ProductPage() {
                   </p>
                   <p className="text-foreground font-medium">We think that's unfair.</p>
                   <p>
-                    TAU Icon Generator is a <span className="text-foreground font-semibold">one-time $20 purchase</span>
+                    TAU Icon Generator is a <span className="text-foreground font-semibold">one-time $29 purchase</span>
                     . After that, you only pay OpenAI directly for what you actually use—no middleman markup, no forced
                     subscriptions.
                   </p>
@@ -205,14 +205,14 @@ export default function ProductPage() {
                 <div className="text-center mb-8">
                   <h2 className="text-3xl md:text-4xl font-bold mb-4">Get TAU Icon Generator</h2>
                   <div className="flex items-baseline justify-center gap-2 mb-4">
-                    <span className="text-5xl font-bold">$20</span>
+                    <span className="text-5xl font-bold">$29</span>
                     <span className="text-muted-foreground">one-time payment</span>
                   </div>
                   <p className="text-muted-foreground mb-2">Lifetime access • No subscriptions • Instant download</p>
                   <p className="text-sm text-primary font-medium">Pay once, own it forever</p>
 
                   <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-                    One-time purchase — <span className="font-semibold text-foreground">$20</span>
+                    One-time purchase — <span className="font-semibold text-foreground">$29</span>
                     <br />
                     No subscription
                     <br />
