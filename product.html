@@ -5,6 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product - TAU Icon Generator</title>
   <meta name="description" content="Generate consistent app-ready icon packs and export platform icon sizes for iOS, Android, Web, and Unity. One-time $29 payment, no subscriptions.">
+  <link rel="canonical" href="https://www.tauicongenerator.com/product.html">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="TAU Icon Generator">
+  <meta property="og:title" content="TAU Icon Generator - Pricing & Features">
+  <meta property="og:description" content="Generate consistent app-ready icon packs and export complete iOS/Android/Web/Unity icon sets. One-time $29 purchase, no subscriptions.">
+  <meta property="og:url" content="https://www.tauicongenerator.com/product.html">
+  <meta property="og:image" content="https://www.tauicongenerator.com/public/appicon.png">
+  <meta property="og:image:alt" content="TAU Icon Generator app icon">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TAU Icon Generator - Pricing & Features">
+  <meta name="twitter:description" content="Generate consistent app-ready icon packs and export complete iOS/Android/Web/Unity icon sets. One-time $29 purchase, no subscriptions.">
+  <meta name="twitter:image" content="https://www.tauicongenerator.com/public/appicon.png">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.tauicongenerator.com/#organization",
+          "name": "TAU Developer Tools",
+          "url": "https://www.tauicongenerator.com/",
+          "brand": {
+            "@type": "Brand",
+            "name": "TAU Icon Generator"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.tauicongenerator.com/#website",
+          "url": "https://www.tauicongenerator.com/",
+          "name": "TAU Icon Generator",
+          "publisher": {
+            "@id": "https://www.tauicongenerator.com/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.tauicongenerator.com/product.html#webpage",
+          "url": "https://www.tauicongenerator.com/product.html",
+          "name": "TAU Icon Generator - Pricing & Features",
+          "isPartOf": {
+            "@id": "https://www.tauicongenerator.com/#website"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://www.tauicongenerator.com/#software",
+          "name": "TAU Icon Generator",
+          "operatingSystem": "macOS 12 or later",
+          "applicationCategory": "DeveloperApplication",
+          "description": "Generate consistent icon packs or export complete iOS/Android/Web/Unity app icon sets from a single icon.",
+          "image": "https://www.tauicongenerator.com/public/appicon.png",
+          "offers": {
+            "@type": "Offer",
+            "url": "https://www.tauicongenerator.com/product.html#purchase",
+            "price": "29.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ]
+    }
+  </script>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -369,7 +436,7 @@
               } else {
                 // Show demo download button for Mac users
                 document.getElementById('demo-container').innerHTML = `
-                  <a href="https://tauicongenerator.com/10/demo.pkg" class="btn btn-primary w-full" style="font-size:1.125rem; padding:0.875rem 1.5rem; background-color: #22c55e; border-color: #22c55e;">
+                  <a href="https://www.tauicongenerator.com/10/demo.pkg" class="btn btn-primary w-full" style="font-size:1.125rem; padding:0.875rem 1.5rem; background-color: #22c55e; border-color: #22c55e;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
                     Download Free Demo
                   </a>
@@ -467,7 +534,7 @@
       if (!isMacOS()) {
         document.getElementById('nav-cta-container').innerHTML = `<a href="#purchase" class="btn btn-primary btn-sm">Get Started</a>`;
       } else {
-        document.getElementById('nav-cta-container').innerHTML = `<a href="https://tauicongenerator.com/10/demo.pkg" class="btn btn-primary btn-sm" style="background-color: #22c55e; border-color: #22c55e;">Try Demo</a>`;
+        document.getElementById('nav-cta-container').innerHTML = `<a href="https://www.tauicongenerator.com/10/demo.pkg" class="btn btn-primary btn-sm" style="background-color: #22c55e; border-color: #22c55e;">Try Demo</a>`;
       }
     });
   </script>
