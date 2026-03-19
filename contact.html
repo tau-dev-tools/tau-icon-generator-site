@@ -155,7 +155,7 @@
               <p style="color: var(--muted-foreground); margin-bottom: 1rem;">
                 For technical support, billing questions, or general inquiries
               </p>
-              <a href="mailto:taudevtools@gmail.com" style="color: var(--primary); font-weight: 500;">
+              <a href="mailto:taudevtools@gmail.com" style="color: var(--primary); font-weight: 500;" data-ga-event="tau_support_email_click" data-ga-label="contact_email_address">
                 taudevtools@gmail.com
               </a>
             </div>
@@ -168,7 +168,7 @@
               <p style="color: var(--muted-foreground); margin-bottom: 1rem;">
                 Join our developer community for tips, updates, and discussions
               </p>
-              <a href="https://tau-dev-tools.github.io/tau-info/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <a href="https://tau-dev-tools.github.io/tau-info/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-ga-event="tau_outbound_click" data-ga-label="contact_tau_dev_tools">
                 Visit TAU Dev Tools
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
               </a>
@@ -225,7 +225,7 @@
 
           <div class="mt-12 text-center">
             <p style="color: var(--muted-foreground); margin-bottom: 1rem;">Still have questions?</p>
-            <a href="mailto:taudevtools@gmail.com" class="btn btn-primary btn-lg">
+            <a href="mailto:taudevtools@gmail.com" class="btn btn-primary btn-lg" data-ga-event="tau_support_email_click" data-ga-label="contact_email_button">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               Email Us
             </a>
@@ -321,11 +321,50 @@
       
       // Handle navigation CTA based on macOS detection
       if (!isMacOS()) {
-        document.getElementById('nav-cta-container').innerHTML = `<a href="product.html#purchase" class="btn btn-primary btn-sm">Get Started</a>`;
+        document.getElementById('nav-cta-container').innerHTML = `<a href="product.html#purchase" class="btn btn-primary btn-sm" data-ga-event="tau_purchase_intent_click" data-ga-label="nav_get_started">Get Started</a>`;
       } else {
-        document.getElementById('nav-cta-container').innerHTML = `<a href="https://www.tauicongenerator.com/10/demo.pkg" class="btn btn-primary btn-sm" style="background-color: #22c55e; border-color: #22c55e;">Try Demo</a>`;
+        document.getElementById('nav-cta-container').innerHTML = `<a href="https://www.tauicongenerator.com/10/demo.pkg" class="btn btn-primary btn-sm" style="background-color: #22c55e; border-color: #22c55e;" data-ga-event="tau_try_demo_click" data-ga-label="nav_try_demo">Try Demo</a>`;
       }
     });
+  </script>
+
+  <script>
+    (function () {
+      function track(eventName, params) {
+        try {
+          if (typeof gtag === 'function') {
+            gtag('event', eventName, params || {});
+          }
+        } catch (_) {
+          // no-op
+        }
+      }
+
+      document.addEventListener(
+        'click',
+        function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('[data-ga-event]') : null;
+          if (!el) return;
+
+          const eventName = el.getAttribute('data-ga-event');
+          if (!eventName) return;
+
+          const href = el.getAttribute('href') || '';
+          const label = el.getAttribute('data-ga-label') || '';
+          const text = (el.textContent || '').trim().slice(0, 120);
+
+          track(eventName, {
+            event_source: 'tauicongenerator_site',
+            event_label: label,
+            link_url: href,
+            link_text: text,
+            page_path: window.location.pathname,
+            page_title: document.title,
+          });
+        },
+        { capture: true }
+      );
+    })();
   </script>
 </body>
 </html>

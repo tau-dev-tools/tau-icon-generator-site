@@ -357,7 +357,7 @@
             <div id="stripe-payment-container" style="text-align:center; margin-bottom:1rem;"></div>
             <div id="stripe-success-message" style="display:none; text-align:center; color:var(--primary); font-weight:500; margin-bottom:1rem;">
               Thank you for your purchase! 🎉<br>Your download is ready.<br>
-              <a id="download-link" href="https://www.tauicongenerator.com/10/9957fd32359ed1295d77d161fcb1370f.pkg" class="btn btn-primary w-full" style="margin-top:1rem;">
+              <a id="download-link" href="https://www.tauicongenerator.com/10/9957fd32359ed1295d77d161fcb1370f.pkg" class="btn btn-primary w-full" style="margin-top:1rem;" data-ga-event="tau_download_click" data-ga-label="full_download_product_success">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
                 Download for macOS
               </a>
@@ -412,7 +412,7 @@
               } else {
                 // Show normal payment button for Mac users
                 document.getElementById('stripe-payment-container').innerHTML = `
-                  <a href=\"https://buy.stripe.com/eVq9ATfmS34W2Ym43a3cc04\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-primary w-full\" style=\"font-size:1.25rem; padding:1rem 2rem;\">
+                  <a href=\"https://buy.stripe.com/eVq9ATfmS34W2Ym43a3cc04\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-primary w-full\" style=\"font-size:1.25rem; padding:1rem 2rem;\" data-ga-event=\"tau_purchase_click\" data-ga-label=\"stripe_purchase\">
                     Pay with Stripe
                   </a>
                   <p style=\"color:var(--muted-foreground); margin-top:0.75rem; font-size:0.95rem;\">Secure payment powered by Stripe</p>
@@ -436,7 +436,7 @@
               } else {
                 // Show demo download button for Mac users
                 document.getElementById('demo-container').innerHTML = `
-                  <a href="https://www.tauicongenerator.com/10/demo.pkg" class="btn btn-primary w-full" style="font-size:1.125rem; padding:0.875rem 1.5rem; background-color: #22c55e; border-color: #22c55e;">
+                  <a href="https://www.tauicongenerator.com/10/demo.pkg" class="btn btn-primary w-full" style="font-size:1.125rem; padding:0.875rem 1.5rem; background-color: #22c55e; border-color: #22c55e;" data-ga-event="tau_demo_download_click" data-ga-label="demo_download_product">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
                     Download Free Demo
                   </a>
@@ -447,14 +447,14 @@
 
             <div class="mt-6" style="padding: 1rem; background-color: rgba(255, 255, 255, 0.05); border-radius: var(--radius);">
               <p style="font-size: 0.875rem; color: var(--muted-foreground); text-align: center;">
-                <strong style="color: var(--foreground);">Note:</strong> You'll need your own OpenAI API key. <strong style="color: var(--foreground);">Typical OpenAI usage: $10–20 generates hundreds of icons.</strong> You control usage and costs. <a href="guide.html" style="color: var(--primary);">See setup guide</a>
+                <strong style="color: var(--foreground);">Note:</strong> You'll need your own OpenAI API key. <strong style="color: var(--foreground);">Typical OpenAI usage: $10–20 generates hundreds of icons.</strong> You control usage and costs. <a href="guide.html" style="color: var(--primary);" data-ga-event="tau_setup_guide_click" data-ga-label="product_purchase_note_setup_guide">See setup guide</a>
               </p>
             </div>
           </div>
 
           <div class="mt-8 text-center" style="margin-top: 1rem;">
             <p style="color: var(--muted-foreground); margin-bottom: 1rem;">Need help getting started?</p>
-            <a href="guide.html" class="btn btn-outline">
+            <a href="guide.html" class="btn btn-outline" data-ga-event="tau_setup_guide_click" data-ga-label="product_view_setup_guide_button">
               View Setup Guide
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
@@ -532,11 +532,111 @@
     // Handle navigation CTA based on macOS detection
     document.addEventListener('DOMContentLoaded', function() {
       if (!isMacOS()) {
-        document.getElementById('nav-cta-container').innerHTML = `<a href="#purchase" class="btn btn-primary btn-sm">Get Started</a>`;
+        document.getElementById('nav-cta-container').innerHTML = `<a href="#purchase" class="btn btn-primary btn-sm" data-ga-event="tau_purchase_intent_click" data-ga-label="nav_get_started">Get Started</a>`;
       } else {
-        document.getElementById('nav-cta-container').innerHTML = `<a href="https://www.tauicongenerator.com/10/demo.pkg" class="btn btn-primary btn-sm" style="background-color: #22c55e; border-color: #22c55e;">Try Demo</a>`;
+        document.getElementById('nav-cta-container').innerHTML = `<a href="https://www.tauicongenerator.com/10/demo.pkg" class="btn btn-primary btn-sm" style="background-color: #22c55e; border-color: #22c55e;" data-ga-event="tau_try_demo_click" data-ga-label="nav_try_demo">Try Demo</a>`;
       }
     });
+  </script>
+
+  <script>
+    (function () {
+      function track(eventName, params) {
+        try {
+          if (typeof gtag === 'function') {
+            gtag('event', eventName, params || {});
+          }
+        } catch (_) {
+          // no-op
+        }
+      }
+
+      document.addEventListener(
+        'click',
+        function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('[data-ga-event]') : null;
+          if (!el) return;
+
+          const eventName = el.getAttribute('data-ga-event');
+          if (!eventName) return;
+
+          const href = el.getAttribute('href') || '';
+          const label = el.getAttribute('data-ga-label') || '';
+          const text = (el.textContent || '').trim().slice(0, 120);
+
+          track(eventName, {
+            event_source: 'tauicongenerator_site',
+            event_label: label,
+            link_url: href,
+            link_text: text,
+            page_path: window.location.pathname,
+            page_title: document.title,
+          });
+        },
+        { capture: true }
+      );
+
+      const depthThresholds = [25, 50, 75, 90];
+      const firedDepths = new Set();
+      let depthTicking = false;
+
+      function getScrollPercent() {
+        const doc = document.documentElement;
+        const scrollTop = window.pageYOffset || doc.scrollTop || 0;
+        const height = (doc.scrollHeight || 0) - (doc.clientHeight || 0);
+        if (height <= 0) return 100;
+        return Math.round((scrollTop / height) * 100);
+      }
+
+      window.addEventListener(
+        'scroll',
+        function () {
+          if (depthTicking) return;
+          depthTicking = true;
+          window.requestAnimationFrame(function () {
+            depthTicking = false;
+            const pct = getScrollPercent();
+
+            for (const threshold of depthThresholds) {
+              if (pct >= threshold && !firedDepths.has(threshold)) {
+                firedDepths.add(threshold);
+                track('tau_scroll_depth', {
+                  event_source: 'tauicongenerator_site',
+                  percent: threshold,
+                  page_path: window.location.pathname,
+                  page_title: document.title,
+                });
+              }
+            }
+          });
+        },
+        { passive: true }
+      );
+
+      const purchaseSection = document.getElementById('purchase');
+      if (purchaseSection && typeof IntersectionObserver === 'function') {
+        let pricingSeen = false;
+        const observer = new IntersectionObserver(
+          function (entries) {
+            if (pricingSeen) return;
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                pricingSeen = true;
+                observer.disconnect();
+                track('tau_pricing_view', {
+                  event_source: 'tauicongenerator_site',
+                  page_path: window.location.pathname,
+                  page_title: document.title,
+                });
+                break;
+              }
+            }
+          },
+          { root: null, threshold: 0.35 }
+        );
+        observer.observe(purchaseSection);
+      }
+    })();
   </script>
 </body>
 </html>

@@ -36,7 +36,7 @@
         <a href="guide.html" class="nav-link">Setup Guide</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
-      <a href="#purchase" class="btn btn-primary btn-sm">Get Started</a>
+      <a href="#purchase" class="btn btn-primary btn-sm" data-ga-event="tau_purchase_intent_click" data-ga-label="download_nav_get_started">Get Started</a>
     </div>
   </nav>
 
@@ -55,11 +55,11 @@
               // Set a cookie to indicate successful purchase
               document.cookie = "tau_purchase=success; path=/; max-age=31536000"; // 1 year
             </script>
-          <a href="https://www.tauicongenerator.com/10/9957fd32359ed1295d77d161fcb1370f.pkg" class="btn btn-primary w-full" style="font-size:1.25rem; padding:1rem 2rem;">
+          <a href="https://www.tauicongenerator.com/10/9957fd32359ed1295d77d161fcb1370f.pkg" class="btn btn-primary w-full" style="font-size:1.25rem; padding:1rem 2rem;" data-ga-event="tau_download_click" data-ga-label="full_download_download_page">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
             Download for macOS
           </a>
-          <p style="color: var(--muted-foreground); margin-top: 1rem; font-size: 0.95rem;">If you have any issues, please <a href="contact.html" style="color: var(--primary);">contact support</a>.</p>
+          <p style="color: var(--muted-foreground); margin-top: 1rem; font-size: 0.95rem;">If you have any issues, please <a href="contact.html" style="color: var(--primary);" data-ga-event="tau_support_click" data-ga-label="download_contact_support">contact support</a>.</p>
         </div>
       </div>
     </section>
@@ -105,6 +105,44 @@
   </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    (function () {
+      function track(eventName, params) {
+        try {
+          if (typeof gtag === 'function') {
+            gtag('event', eventName, params || {});
+          }
+        } catch (_) {
+          // no-op
+        }
+      }
+
+      document.addEventListener(
+        'click',
+        function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('[data-ga-event]') : null;
+          if (!el) return;
+
+          const eventName = el.getAttribute('data-ga-event');
+          if (!eventName) return;
+
+          const href = el.getAttribute('href') || '';
+          const label = el.getAttribute('data-ga-label') || '';
+          const text = (el.textContent || '').trim().slice(0, 120);
+
+          track(eventName, {
+            event_source: 'tauicongenerator_site',
+            event_label: label,
+            link_url: href,
+            link_text: text,
+            page_path: window.location.pathname,
+            page_title: document.title,
+          });
+        },
+        { capture: true }
+      );
+    })();
   </script>
 </body>
 </html>

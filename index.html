@@ -89,7 +89,7 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
 
-      <a href="product.html" class="btn btn-primary btn-sm">Generate App Icon Set</a>
+      <a href="product.html" class="btn btn-primary btn-sm" data-ga-event="tau_home_cta_click" data-ga-label="nav_generate_app_icon_set">Generate App Icon Set</a>
     </div>
   </nav>
 
@@ -115,12 +115,12 @@
         </p>
 
         <div class="hero-buttons">
-          <a href="product.html" class="btn btn-primary btn-lg">Generate App Icon Set</a>
-          <a href="product.html#purchase" class="btn btn-outline btn-lg">Start Icon Project</a>
+          <a href="product.html" class="btn btn-primary btn-lg" data-ga-event="tau_home_cta_click" data-ga-label="hero_generate_app_icon_set">Generate App Icon Set</a>
+          <a href="product.html#purchase" class="btn btn-outline btn-lg" data-ga-event="tau_purchase_intent_click" data-ga-label="hero_start_icon_project">Start Icon Project</a>
         </div>
 
         <p class="hero-note" style="margin-top: -0.5rem;">
-          Prefer to try it first? <a href="product.html" style="font-weight: 600;">Download the free 5-day demo</a>.
+          Prefer to try it first? <a href="product.html" style="font-weight: 600;" data-ga-event="tau_home_cta_click" data-ga-label="hero_demo_link">Download the free 5-day demo</a>.
         </p>
 
         <div style="max-width: 42rem; margin: 1rem auto 0 auto; text-align: left;">
@@ -762,8 +762,8 @@
         Generate an icon, then export complete iOS AppIcon and Android adaptive icon sets with all required sizes.
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
-        <a href="product.html" class="btn btn-primary btn-lg">Create Icons for iOS &amp; Android</a>
-        <a href="product.html#purchase" class="btn btn-outline btn-lg">Buy Once — No Subscription</a>
+        <a href="product.html" class="btn btn-primary btn-lg" data-ga-event="tau_home_cta_click" data-ga-label="bottom_create_icons">Create Icons for iOS &amp; Android</a>
+        <a href="product.html#purchase" class="btn btn-outline btn-lg" data-ga-event="tau_purchase_intent_click" data-ga-label="bottom_buy_once">Buy Once — No Subscription</a>
       </div>
 
       <p style="margin-top: 1rem; color: var(--muted-foreground); font-size: 0.95rem; line-height: 1.6;">
@@ -862,6 +862,80 @@
         }
       });
     });
+
+    (function () {
+      function track(eventName, params) {
+        try {
+          if (typeof gtag === 'function') {
+            gtag('event', eventName, params || {});
+          }
+        } catch (_) {
+          // no-op
+        }
+      }
+
+      document.addEventListener(
+        'click',
+        function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('[data-ga-event]') : null;
+          if (!el) return;
+
+          const eventName = el.getAttribute('data-ga-event');
+          if (!eventName) return;
+
+          const href = el.getAttribute('href') || '';
+          const label = el.getAttribute('data-ga-label') || '';
+          const text = (el.textContent || '').trim().slice(0, 120);
+
+          track(eventName, {
+            event_source: 'tauicongenerator_site',
+            event_label: label,
+            link_url: href,
+            link_text: text,
+            page_path: window.location.pathname,
+            page_title: document.title,
+          });
+        },
+        { capture: true }
+      );
+
+      const depthThresholds = [25, 50, 75, 90];
+      const firedDepths = new Set();
+      let depthTicking = false;
+
+      function getScrollPercent() {
+        const doc = document.documentElement;
+        const scrollTop = window.pageYOffset || doc.scrollTop || 0;
+        const height = (doc.scrollHeight || 0) - (doc.clientHeight || 0);
+        if (height <= 0) return 100;
+        return Math.round((scrollTop / height) * 100);
+      }
+
+      window.addEventListener(
+        'scroll',
+        function () {
+          if (depthTicking) return;
+          depthTicking = true;
+          window.requestAnimationFrame(function () {
+            depthTicking = false;
+            const pct = getScrollPercent();
+
+            for (const threshold of depthThresholds) {
+              if (pct >= threshold && !firedDepths.has(threshold)) {
+                firedDepths.add(threshold);
+                track('tau_scroll_depth', {
+                  event_source: 'tauicongenerator_site',
+                  percent: threshold,
+                  page_path: window.location.pathname,
+                  page_title: document.title,
+                });
+              }
+            }
+          });
+        },
+        { passive: true }
+      );
+    })();
   </script>
 </body>
 </html>

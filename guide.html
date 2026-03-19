@@ -136,12 +136,12 @@
               Create an OpenAI Account
             </h2>
             <ol style="color: var(--muted-foreground);">
-              <li>Visit <a href="https://platform.openai.com/signup" target="_blank" rel="noopener noreferrer">platform.openai.com/signup</a></li>
+              <li>Visit <a href="https://platform.openai.com/signup" target="_blank" rel="noopener noreferrer" data-ga-event="tau_openai_link_click" data-ga-label="openai_signup">platform.openai.com/signup</a></li>
               <li>Sign up with your email address or Google/Microsoft account</li>
               <li>Verify your email address if required</li>
               <li>Complete the registration process</li>
             </ol>
-            <a href="https://platform.openai.com/signup" target="_blank" rel="noopener noreferrer" class="btn btn-outline mt-4">
+            <a href="https://platform.openai.com/signup" target="_blank" rel="noopener noreferrer" class="btn btn-outline mt-4" data-ga-event="tau_openai_link_click" data-ga-label="openai_signup_button">
               Go to OpenAI Signup
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
             </a>
@@ -169,7 +169,7 @@
             </div>
 
             <ol style="color: var(--muted-foreground);">
-              <li>Log in to <a href="https://platform.openai.com/settings/profile" target="_blank" rel="noopener noreferrer">platform.openai.com/settings/profile</a></li>
+              <li>Log in to <a href="https://platform.openai.com/settings/profile" target="_blank" rel="noopener noreferrer" data-ga-event="tau_openai_link_click" data-ga-label="openai_settings_profile">platform.openai.com/settings/profile</a></li>
               <li>In the left sidebar, click on "Billing"</li>
               <li>Click "Add payment method" and enter your credit card details</li>
               <li>Choose "Add to credit balance" and select an amount (minimum $5)</li>
@@ -181,7 +181,7 @@
               <p><strong>Tip:</strong> You can set up usage limits in the billing settings to control your spending.</p>
             </div>
 
-            <a href="https://platform.openai.com/settings/profile" target="_blank" rel="noopener noreferrer" class="btn btn-outline mt-4">
+            <a href="https://platform.openai.com/settings/profile" target="_blank" rel="noopener noreferrer" class="btn btn-outline mt-4" data-ga-event="tau_openai_link_click" data-ga-label="openai_settings_button">
               Go to Settings
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
             </a>
@@ -193,7 +193,7 @@
               Create Your API Key
             </h2>
             <ol style="color: var(--muted-foreground);">
-              <li>Navigate to <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com/api-keys</a></li>
+              <li>Navigate to <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" data-ga-event="tau_openai_link_click" data-ga-label="openai_api_keys">platform.openai.com/api-keys</a></li>
               <li>Click the "+ Create new secret key" button</li>
               <li>Give your key a name (e.g., "TAU Icon Generator")</li>
               <li><strong>Important:</strong> Copy the API key immediately - you won't be able to see it again!</li>
@@ -205,7 +205,7 @@
               <p><strong>Security Warning:</strong> Never share your API key publicly or commit it to version control. Treat it like a password.</p>
             </div>
 
-            <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" class="btn btn-outline mt-4">
+            <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" class="btn btn-outline mt-4" data-ga-event="tau_openai_link_click" data-ga-label="openai_api_keys_button">
               Go to API Keys
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
             </a>
@@ -254,7 +254,7 @@
               <div>
                 <h4 style="font-weight: 600; margin-bottom: 0.5rem;">Need more help?</h4>
                 <p style="font-size: 0.875rem; color: var(--muted-foreground);">
-                  Check the <a href="https://platform.openai.com/docs" target="_blank" rel="noopener noreferrer">OpenAI documentation</a> or <a href="contact.html">contact our support team</a>.
+                  Check the <a href="https://platform.openai.com/docs" target="_blank" rel="noopener noreferrer" data-ga-event="tau_openai_link_click" data-ga-label="openai_docs">OpenAI documentation</a> or <a href="contact.html" data-ga-event="tau_support_click" data-ga-label="guide_contact_support">contact our support team</a>.
                 </p>
               </div>
             </div>
@@ -350,7 +350,7 @@
       
       // Handle navigation CTA based on macOS detection
       if (!isMacOS()) {
-        document.getElementById('nav-cta-container').innerHTML = `<a href=\"product.html#purchase\" class=\"btn btn-primary btn-sm\">Get Started</a>`;
+        document.getElementById('nav-cta-container').innerHTML = `<a href=\"product.html#purchase\" class=\"btn btn-primary btn-sm\" data-ga-event=\"tau_purchase_intent_click\" data-ga-label=\"nav_get_started\">Get Started</a>`;
         // Show message for demo section
         document.getElementById('guide-demo-container').innerHTML = `
           <div style=\"padding:1rem; background-color: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: var(--radius);\">
@@ -360,16 +360,55 @@
           </div>
         `;
       } else {
-        document.getElementById('nav-cta-container').innerHTML = `<a href=\"https://www.tauicongenerator.com/10/demo.pkg\" class=\"btn btn-primary btn-sm\" style=\"background-color: #22c55e; border-color: #22c55e;\">Try Demo</a>`;
+        document.getElementById('nav-cta-container').innerHTML = `<a href=\"https://www.tauicongenerator.com/10/demo.pkg\" class=\"btn btn-primary btn-sm\" style=\"background-color: #22c55e; border-color: #22c55e;\" data-ga-event=\"tau_try_demo_click\" data-ga-label=\"nav_try_demo\">Try Demo</a>`;
         // Show demo download button
         document.getElementById('guide-demo-container').innerHTML = `
-          <a href=\"https://www.tauicongenerator.com/10/demo.pkg\" class=\"btn btn-primary\" style=\"background-color: #22c55e; border-color: #22c55e;\">
+          <a href=\"https://www.tauicongenerator.com/10/demo.pkg\" class=\"btn btn-primary\" style=\"background-color: #22c55e; border-color: #22c55e;\" data-ga-event=\"tau_demo_download_click\" data-ga-label=\"demo_download_guide\">
             <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"margin-right: 0.5rem;\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" x2=\"12\" y1=\"15\" y2=\"3\"/></svg>
             Download Free Demo
           </a>
         `;
       }
     });
+  </script>
+
+  <script>
+    (function () {
+      function track(eventName, params) {
+        try {
+          if (typeof gtag === 'function') {
+            gtag('event', eventName, params || {});
+          }
+        } catch (_) {
+          // no-op
+        }
+      }
+
+      document.addEventListener(
+        'click',
+        function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('[data-ga-event]') : null;
+          if (!el) return;
+
+          const eventName = el.getAttribute('data-ga-event');
+          if (!eventName) return;
+
+          const href = el.getAttribute('href') || '';
+          const label = el.getAttribute('data-ga-label') || '';
+          const text = (el.textContent || '').trim().slice(0, 120);
+
+          track(eventName, {
+            event_source: 'tauicongenerator_site',
+            event_label: label,
+            link_url: href,
+            link_text: text,
+            page_path: window.location.pathname,
+            page_title: document.title,
+          });
+        },
+        { capture: true }
+      );
+    })();
   </script>
 </body>
 </html>
