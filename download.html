@@ -118,6 +118,17 @@
         }
       }
 
+      function trackAdsConversion(sendTo, params) {
+        if (!sendTo) return;
+        try {
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', Object.assign({ send_to: sendTo }, params || {}));
+          }
+        } catch (_) {
+          // no-op
+        }
+      }
+
       document.addEventListener(
         'click',
         function (event) {
@@ -131,6 +142,11 @@
           const label = el.getAttribute('data-ga-label') || '';
           const text = (el.textContent || '').trim().slice(0, 120);
 
+          const adsSendTo = el.getAttribute('data-ads-conversion-send-to') || '';
+          const adsValueRaw = el.getAttribute('data-ads-conversion-value');
+          const adsCurrency = el.getAttribute('data-ads-conversion-currency') || '';
+          const adsValue = adsValueRaw != null && adsValueRaw !== '' ? Number(adsValueRaw) : undefined;
+
           track(eventName, {
             event_source: 'tauicongenerator_site',
             event_label: label,
@@ -139,6 +155,16 @@
             page_path: window.location.pathname,
             page_title: document.title,
           });
+
+          if (adsSendTo) {
+            trackAdsConversion(adsSendTo, {
+              value: Number.isFinite(adsValue) ? adsValue : undefined,
+              currency: adsCurrency || undefined,
+              event_label: label,
+              page_path: window.location.pathname,
+              page_title: document.title,
+            });
+          }
         },
         { capture: true }
       );
